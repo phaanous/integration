@@ -12,7 +12,7 @@ pipeline {
             steps {
                 build job: 'OPG-J2-EXP-FEATURE-BUILD/OPG-J2-EXP-TIER-ONE-FEATURE/feature-123', 
                 propagate: true, 
-                wait: true
+                wait: true,
                 parameters: [
                         [$class: 'StringParameterValue', name: 'FEATURE_BUILD', 'value': 'true'], 
                         [$class: 'StringParameterValue', name: 'BRANCH_TO_BUILD', value: env.AUTH_MEMBRANE_BRANCH]
