@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Trigger feature build job on tier one') {                        
             steps {
-                build job: 'downstream-freestyle', 
+                build job: 'OPG-J2-EXP-FEATURE-BUILD/OPG-J2-EXP-TIER-ONE-FEATURE', 
                 parameters: [
                         [$class: 'StringParameterValue', name: 'FEATURE_BUILD', 'value': 'true'], 
                         [$class: 'StringParameterValue', name: 'BRANCH_TO_BUILD', value: env.AUTH_MEMBRANE_BRANCH]
