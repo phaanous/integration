@@ -18,7 +18,7 @@ pipeline {
                 stage ('Scan tier on') {
 
                     steps {
-                        build job: "OPG-J2-EXP-FEATURE-BUILD/OPG-J2-EXP-TIER-ONE-FEATURE",
+                        build job: "OPG-J2-EXP-FEATURE-BUILD/OPG-J2-EXP-TIER-ONE-FEATURE/build?delay=0",
                             propagate: true, 
                             wait: true
                     }
