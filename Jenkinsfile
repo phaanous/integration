@@ -9,6 +9,19 @@ pipeline {
 
     stages {
 
+        stage('Sacn repositories') {
+
+            parallel {
+
+                stage ('Scan tier on') {
+
+                    steps {
+                        build job "OPG-J2-EXP-FEATURE-BUILD/job/OPG-J2-EXP-TIER-ONE-FEATURE"
+                    }
+                }
+            }
+        }
+
         stage('Trigger builds on all tiers in parallel') {                        
 
             failFast true
