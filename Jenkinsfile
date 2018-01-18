@@ -17,7 +17,13 @@ pipeline {
 
                 stage ('Build tier one'){
 
-                    steps {                        
+                    steps {
+                        build job: "OPG-J2-EXP-FEATURE-BUILD/OPG-J2-EXP-TIER-ONE-FEATURE/${env.TIER_ONE_BRANCH}", 
+                            propagate: true, 
+                            wait: true,
+                            parameters: [                        
+                                    [$class: 'StringParameterValue', name: 'BRANCH_TO_BUILD', value: env.TIER_ONE_BRANCH]
+                                ]
                         echo "Completed building tier one's ${env.TIER_ONE_BRANCH} branch"
                     }        
 
@@ -26,7 +32,7 @@ pipeline {
                 stage ('Build tier two'){
 
                     steps {
-                        build job: "OPG-J2-EXP-FEATURE-BUILD/OPG-J2-EXP-TIER-ONE-FEATURE/${env.TIER_TWO_BRANCH}", 
+                        build job: "OPG-J2-EXP-FEATURE-BUILD/OPG-J2-EXP-TIER-TWO-FEATURE/${env.TIER_TWO_BRANCH}", 
                             propagate: true, 
                             wait: true,
                             parameters: [                        
@@ -40,7 +46,7 @@ pipeline {
                 stage ('Build tier tree'){
 
                     steps {
-                        build job: "OPG-J2-EXP-FEATURE-BUILD/OPG-J2-EXP-TIER-ONE-FEATURE/${env.TIER_THREE_BRANCH}", 
+                        build job: "OPG-J2-EXP-FEATURE-BUILD/OPG-J2-EXP-TIER-THREE-FEATURE/${env.TIER_THREE_BRANCH}", 
                             propagate: true, 
                             wait: true,
                             parameters: [                        
