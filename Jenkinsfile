@@ -3,7 +3,7 @@ pipeline {
 
     parameters {        
         string(name: 'TIER_ONE_BRANCH', defaultValue: '', description: 'The tier one branch name to build')
-        string(name: 'TIER_TOW_BRANCH', defaultValue: '', description: 'The tier two branch name to build')
+        string(name: 'TIER_TWO_BRANCH', defaultValue: '', description: 'The tier two branch name to build')
         string(name: 'TIER_THREE_BRANCH', defaultValue: '', description: 'The tier three branch name to build')
     }
 
