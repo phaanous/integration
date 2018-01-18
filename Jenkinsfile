@@ -17,8 +17,7 @@ pipeline {
 
                 stage ('Build tier one'){
 
-                    steps {
-                        echo "Completed building tier one's ${env.TIER_ONE_BRANCH} branch"
+                    steps {                        
                         build job: "OPG-J2-EXP-FEATURE-BUILD/OPG-J2-EXP-TIER-ONE-FEATURE/${env.TIER_ONE_BRANCH}", 
                             propagate: true, 
                             wait: true,
